@@ -1,0 +1,2 @@
+# LeetCode
+Invest for future
