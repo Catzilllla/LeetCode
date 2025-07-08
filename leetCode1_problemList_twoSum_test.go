@@ -16,7 +16,7 @@ func twoSum(nums []int, target int) []int {
     return bufferMass
 }
 
-func testTwoSum(t *testing.T) {
+func TestTwoSum(t *testing.T) {
 	tests := []struct {
 		name string
 		nums []int
@@ -31,15 +31,15 @@ func testTwoSum(t *testing.T) {
 		},
 		{
 			name:	"Test 2",
-			nums:	[]int{0, 0, 0, 0},
-			target:	0,
+			nums:	[]int{0, 1, 2, 3},
+			target:	1,
 			buffer:	[]int{0, 1},
 		},
 		{
 			name:	"Test 3",
-			nums:	[]int{1, 1, 1, 1},
+			nums:	[]int{1, 4, 3, 1},
 			target:	2,
-			buffer:	[]int{0, 1},
+			buffer:	[]int{1, 1},
 		},
 		{
 			name:	"Test 4",
