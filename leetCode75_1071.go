@@ -16,10 +16,10 @@ func gcdOfStrings(str1 string, str2 string) string {
 		buffer = ""
 		return buffer
 	}
-	for i, r := range str2 {
+	for i, _ := range str2 {
 		// fmt.Printf("%d %v\n", i, string(r))
 		
-		buffer = str1[i:]
+		buffer = str1[i+1:]
 		if str1[i] != str2[i] {
 			return buffer
 		}
