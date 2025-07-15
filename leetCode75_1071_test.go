@@ -2,29 +2,43 @@ package main
 
 import (
 	"testing"
+	"strings"
 )
 
 func gcdOfStrings(str1 string, str2 string) string {
-	// for i := 65; i < 123; i++ {
-	// 	if i < 91 || i > 96 {
-	// 		fmt.Print(string(i))
-	// 	}
-	// }ß
+    var x string
+    lenStr1 := len(str1)
+    lenStr2 := len(str2)
 
-	var buffer string
-	if str1[0] != str2[0] {
-		buffer = ""
-		return buffer
+	/* чекер строки1 с множеством повторений */
+	sameChar := str1[0]
+	for _, char := range str1 {
+		if 
 	}
-	for i, _ := range str2 {
-		// fmt.Printf("%d %v\n", i, string(r))
-		
-		buffer = str1[i+1:]
-		if str1[i] != str2[i] {
-			return buffer
-		}
-	}
-	return buffer
+
+	/* чекаем что первый символ != первому символу 2ой лексемыы */
+    if lenStr1 > lenStr2 {
+        if str2[0] != str1[lenStr2] {
+            return ""
+        }
+        x = str1[lenStr2:]
+    }
+
+    if lenStr1 < lenStr2 {
+		s := strings.
+        if str2[0] != str1[lenStr2] {
+            return ""
+        }
+        x = str2[lenStr1:]
+    }
+
+	if lenStr1 == lenStr2 {
+        if str1[0] != str2[0] {
+            return ""
+        }
+    }
+
+	return x
 }
 
 func TestGcdOfStrings(t *testing.T) {
@@ -48,9 +62,21 @@ func TestGcdOfStrings(t *testing.T) {
 		},
 		{
 			name:	"Test 3",
-			word1:	"ABCAB",
-			word2:	"AB",
-			result: "CAB",
+			word1:	"ABCABC",
+			word2:	"ABC",
+			result: "ABC",
+		},
+		{
+			name:	"Test 4",
+			word1:	"AAAAAAAA",
+			word2:	"A",
+			result: "A",
+		},
+		{
+			name:	"Test 5",
+			word1:	"TAUXXTAUXXTAUXXTAUXXTAUXX",
+			word2:	"TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX",
+			result: "TAUXXTAUXXTAUXXTAUXXTAUXX",
 		},
 	}
 

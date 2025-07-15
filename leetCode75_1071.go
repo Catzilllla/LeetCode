@@ -5,26 +5,32 @@ import (
 )
 
 func gcdOfStrings(str1 string, str2 string) string {
-	// for i := 65; i < 123; i++ {
-	// 	if i < 91 || i > 96 {
-	// 		fmt.Print(string(i))
-	// 	}
-	// }ß
+    var x string
+    lenStr1 := len(str1)
+    lenStr2 := len(str2)
+    // check := 0
 
-	var buffer string
-	if str1[0] != str2[0] {
-		buffer = ""
-		return buffer
-	}
-	for i, _ := range str2 {
-		// fmt.Printf("%d %v\n", i, string(r))
-		
-		buffer = str1[i+1:]
-		if str1[i] != str2[i] {
-			return buffer
-		}
-	}
-	return buffer
+    if lenStr1 > lenStr2 {
+        if str2[0] != str1[lenStr2] {
+            return ""
+        }
+        x = str1[lenStr2:]
+    }
+
+    if lenStr1 < lenStr2 {
+        if str2[0] != str1[lenStr2] {
+            return ""
+        }
+        x = str2[lenStr1:]
+    }
+
+	if lenStr1 == lenStr2 {
+        if str1[0] != str2[0] {
+            return ""
+        }
+    }
+
+	return x
 }
 
 func main() {
